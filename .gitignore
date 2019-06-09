@@ -8,3 +8,14 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
+
+
+# Android
+*.apk
+*.hprof
+/android/**/build
+/android/**/local.properties
+/android/captures
+/android/expoview/libs/ReactAndroid-temp
+/android/versioned-react-native/ReactAndroid
+ReactAndroid-temp.aar
