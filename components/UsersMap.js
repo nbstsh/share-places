@@ -2,8 +2,11 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
-const UsersMap = ({ userLocation }) => {
-	console.log({ userLocation });
+const UsersMap = ({ userLocation, userLocations }) => {
+	const markers = userLocations.map(location => (
+		<Marker key={location.id} coordinate={location} />
+	));
+	console.log(userLocations);
 	return (
 		<View style={styles.mapContainer}>
 			<MapView
@@ -17,6 +20,7 @@ const UsersMap = ({ userLocation }) => {
 				region={userLocation}
 			>
 				{userLocation ? <Marker coordinate={userLocation} /> : null}
+				{markers}
 			</MapView>
 		</View>
 	);
